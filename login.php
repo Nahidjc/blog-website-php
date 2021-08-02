@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-	<title>register user</title>
+<link rel="stylesheet" href="css/style.css">
+	<title>Login user</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 		<h2>Login on Blog Website</h2>
 	</div>
 
-	<div style="width: 40%; margin: 20px auto;">
+	<div style=" margin: 20px auto;">
 
 		<form method="post" action="register.php">
 

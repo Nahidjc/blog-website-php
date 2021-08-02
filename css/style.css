@@ -36,7 +36,8 @@ form{
     margin: 0 auto;
     padding: 20px;
     border: 1px solid lightblue;
-    background: white;
+    background: #5F9EA0;
+
     border-radius: 0px 0px 10px 10px;
 }
 
@@ -58,4 +59,12 @@ form{
     border-radius: 5px;
     border: 1px solid gray;
 
+}
+.btn{
+    background: linear-gradient(45deg,salmon,tomato);
+    padding: 10px 15px;
+    border-radius:10px;
+    color: white;
+    border: 1px solid lightcyan;
+    cursor: pointer;
 }
