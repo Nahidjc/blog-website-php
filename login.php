@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+
 	<title>register user</title>
 </head>
 
 <body>
 
 	<div class="header">
-		<h2>Register on Blog Website</h2>
+		<h2>Login on Blog Website</h2>
 	</div>
 
 	<div style="width: 40%; margin: 20px auto;">
@@ -23,29 +23,21 @@
 				<label>Username</label>
 				<input type="text" name="username" placeholder="Username">
 			</div>
-			<div class="input-group"><label>Email</label>
-
-				<input type="email" name="email" placeholder="Email">
-			</div>
 			<div class="input-group"><label>Password</label>
 
-				<input type="password" name="password_1" placeholder="Password">
+				<input type="password" name="password" placeholder="Password">
 
 			</div>
-			<div class="input-group">
-				<label>Confirm Password</label>
-				<input type="password" name="password_2" placeholder="Password confirmation">
-
-			</div>
+	
 			<div class="input-group">
 
-				<button type="submit" class="btn" name="register">Register</button>
+				<button type="submit" class="btn" name="login">Login</button>
 
 			</div>
 
 
 			<p>
-				Already a member? <a href="login.php">Sign in</a>
+				Not yet  a member? <a href="registration.php">Sign up</a>
 			</p>
 		</form>
 	</div>
