@@ -26,6 +26,7 @@ check_login_user();
            <p>Welcome <strong> <?php echo $_SESSION['username']; ?>
              </strong> </p>
         <?php endif ?>
+        <a href="logout.php" class="btn btn-info" role="button" style="float:right;">Log Out</a>
 
 </body>
 </html>
