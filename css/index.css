@@ -1,0 +1,35 @@
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bolder;
+
+}
+
+.nav-item a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul li {
+    padding: 5px 10px;
+}
+
+.btn {
+    color: white !important;
+}
+
+li a {
+    text-decoration: none !important;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.author>img {
+    display: block;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    padding-top: 15px;
+    border-radius: 15px;
+}
