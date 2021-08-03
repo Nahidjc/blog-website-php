@@ -22,10 +22,10 @@ hr { margin: 10px 0px; opacity: .25; }
 
 .header{
     width: 30%;
-    margin: 50px auto 0px;
+    margin: 50px auto 0px auto;
     color: white;
     text-align: center;
-    background: #5F9EA0;
+    background: lightseagreen;
     padding: 20px;
     border-radius: 10px 10px 0px 0px;
     border: 1px solid #B0C4DE;
@@ -34,10 +34,7 @@ hr { margin: 10px 0px; opacity: .25; }
 form{
     width: 30%;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid lightblue;
-    background: #5F9EA0;
-
+    padding: 30px;
     border-radius: 0px 0px 10px 10px;
 }
 
@@ -48,15 +45,17 @@ form{
 .input-group label{
     display: block;
     text-align:left ;
-    margin: 3px;
+    margin: 5px;
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .input-group input{
-    height: 30px;
-    width: 90%;
+    height: 40px;
+    width: 93%;
     padding: 5px 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid gray;
 
 }
