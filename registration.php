@@ -34,10 +34,16 @@
         $sql = "INSERT INTO users (username,email,password)
         VALUES ('$username','$email','$password')";
 
-        mysqli_query($mysqli,$sql);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in";
+       $result = mysqli_query($mysqli,$sql);
+
+       if($result == true){
         header('location:login.php');
+       }else{
+         echo "You have an error";
+       }
+        // $_SESSION['username'] = $username;
+        // $_SESSION['success'] = "You are now logged in";
+      
       }
 
 		}

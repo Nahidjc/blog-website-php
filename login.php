@@ -4,8 +4,7 @@
 <?php
     include_once("config.php");
 
-		$username = "";
-		$email ="";
+		session_start();
 		$errors = array();
 
 		if(isset($_POST['login'])){
@@ -23,16 +22,16 @@
 
 			if(count($errors)==0){
 				$password = md5($password);
-				$sql = " SELECT * FROM users WHERE username = '$username'
-				AND password ='$password' ";
+				$sql = "SELECT * FROM users WHERE username = '$username'
+				and password='$password' ";
 
 				$result =mysqli_query($mysqli,$sql);
 				
 				if(mysqli_num_rows($result) == 1){
 					//login user
 					$_SESSION['username'] = $username;
-					$_SESSION['success'] = "You are now logged in";
-					header('location:index.php');
+					$_SESSION['password'] = $password;
+					header("Location: index.php");
 
 				}else{
 					array_push($errors,"wrong username or password");
