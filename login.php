@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+    include_once("config.php");
+
+		$username = "";
+		$email ="";
+		$errors = array();
+
+		if(isset($_POST['login'])){
+			$username = $_POST['username'];
+			$password =  $_POST['password'];
+
+			if(empty($username)){
+				array_push($errors,"Username is required");
+			}
+			
+		
+			if(empty($password)){
+				array_push($errors,"Password is required");
+			}
+
+			if(count($errors)==0){
+				$password = md5($password);
+				$sql = " SELECT * FROM users WHERE username = '$username'
+				AND password ='$password' ";
+
+				$result =mysqli_query($mysqli,$sql);
+				
+				if(mysqli_num_rows($result) == 1){
+					//login user
+					$_SESSION['username'] = $username;
+					$_SESSION['success'] = "You are now logged in";
+					header('location:index.php');
+
+				}else{
+					array_push($errors,"wrong username or password");
+				}
+				
+			
+			}
+
+		}
+
+
+?>
+
+
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +65,8 @@
 	<div  style=" margin: 0px auto;">
 
 		<form class="shadow  bg-white rounded"  method="post" action="">
-
+			<!-- errors print -->
+			<?php include('errors.php'); ?>
 			<div class="input-group">
 				<label>Username</label>
 				<input type="text" name="username" placeholder="Username">

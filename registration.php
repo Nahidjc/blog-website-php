@@ -35,6 +35,9 @@
         VALUES ('$username','$email','$password')";
 
         mysqli_query($mysqli,$sql);
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in";
+        header('location:login.php');
       }
 
 		}
@@ -63,15 +66,17 @@
 
     <div style="margin: 0px auto">
       <form class="shadow bg-white rounded" method="post" action="registration.php">
-        <?php include('errors.php'); ?>
+      
+      <!-- errors print -->
+      <?php include('errors.php'); ?>
         <div class="input-group">
           <label>Username</label>
-          <input type="text" name="username" placeholder="Username" />
+          <input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>" />
         </div>
 
         <div class="input-group">
           <label>Email </label> <br />
-          <input type="email" name="email" placeholder="Email" />
+          <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>" />
         </div>
 
         <div class="input-group">
