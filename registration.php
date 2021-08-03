@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>register user</title>
-
-    <?php
+<?php
     include_once("config.php");
 
 		$username = "";
 		$email ="";
 		$errors = array();
 
-		if(isset($_POST['registration'])){
+		if(isset($_POST['register'])){
       $username = $_POST['username'];
       $email =  $_POST['email'];
       $password_1 =  $_POST['password_1'];
@@ -41,17 +31,29 @@
 
       if(count($errors)==0){
         $password = md5($password_1);
-        $sql = "INSERT INTO users (username,email,password_1)
-        VALUES ('$username','$email','$password')
-        ";
+        $sql = "INSERT INTO users (username,email,password)
+        VALUES ('$username','$email','$password')";
 
-        mysqli_query($db,$sql);
+        mysqli_query($mysqli,$sql);
       }
 
 		}
 
 
 ?>
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>register user</title>
+
+ 
   </head>
 
   <body>
@@ -60,7 +62,8 @@
     </div>
 
     <div style="margin: 0px auto">
-      <form class="shadow bg-white rounded" method="post" action="register.php">
+      <form class="shadow bg-white rounded" method="post" action="registration.php">
+        <?php include('errors.php'); ?>
         <div class="input-group">
           <label>Username</label>
           <input type="text" name="username" placeholder="Username" />
