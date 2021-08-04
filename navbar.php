@@ -32,7 +32,7 @@
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Create Blog</a>
+                            <a href="addBlog.php" class="nav-link">Create Blog</a>
                         </li>
 
                         <li class="nav-item">

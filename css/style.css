@@ -77,9 +77,30 @@ form {
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 10px;
-    border: 1px solid gray;
+    border: 1px solid orange;
 
 }
+
+textarea {
+    width: 93%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+/* .input-group textarea {
+    height: 40px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+} */
 
 .btn {
     background: linear-gradient(45deg, salmon, tomato);
