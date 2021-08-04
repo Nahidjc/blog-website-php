@@ -13,63 +13,17 @@
 </head>
 
 <body>
-
+  <!-- navbar inheritance -->
+  <?php include("navbar.php"); ?>
   <!-- if user not logged in they can not access this page -->
   <header class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top  mb-5 bg-danger">
-      <div class="container">
-        <a class="navbar-brand text-warning" href="#">TOP NEWS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#catagories">Catagories</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link " href="#">Subscribe</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Create Blog</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fas fa-user"></i>
-                <span class="ms-1 font-weight-bold">Nahidjc</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="logout.php" class="nav-link">
-                <i class="fas fa-sign-out-alt"></i>
-                <span class="ms-1 font-weight-bold">Logout</span>
-              </a>
-            </li>
-
-
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-    <br>
-    <br>
     <!-- slider -->
-    <section class="my-5 shadow-lg mt-5" id="home">
+    <section class="my-5 mt-5 shadow-lg" id="home">
 
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row p-5  d-flex align-items-center">
+            <div class="p-5 row d-flex align-items-center">
               <div class="col-lg-7">
 
                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, id!</h5>
@@ -82,7 +36,7 @@
 
           </div>
           <div class="carousel-item">
-            <div class="row p-5 d-flex align-items-center">
+            <div class="p-5 row d-flex align-items-center">
               <div class="col-lg-7">
                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, temporibus?</h5>
 
@@ -95,7 +49,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="row p-5  d-flex align-items-center">
+            <div class="p-5 row d-flex align-items-center">
               <div class="col-lg-7">
 
                 <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, eius!</h5>
@@ -117,7 +71,7 @@
   <main>
 
     <section class="container">
-      <h1 class="d-flex justify-content-center text-info my-5">Latest News</h1>
+      <h1 class="my-5 d-flex justify-content-center text-info">Latest News</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card author h-100">
@@ -180,7 +134,7 @@
         </div>
 
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+      <div class="mt-3 row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card author h-100">
             <img src="images/covid.jfif" class="card-img-top" alt="...">
@@ -242,21 +196,21 @@
     </section>
 
     <section class="mb-5">
-      <h1 class="d-flex justify-content-center text-info my-5">News Catagories</h1>
+      <h1 class="my-5 d-flex justify-content-center text-info">News Catagories</h1>
 
       <div class="container">
 
         <div class="row align-items-center">
-          <div class="col-6 col-sm-3 shadow">
+          <div class="shadow col-6 col-sm-3">
             <img src="images/business.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-6 col-sm-3  shadow">
+          <div class="shadow col-6 col-sm-3">
             <img src="images/politics.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-6 col-sm-3   shadow">
+          <div class="shadow col-6 col-sm-3">
             <img src="images/sports.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-6 col-sm-3 shadow">
+          <div class="shadow col-6 col-sm-3">
             <img src="images/covid.jfif" class="img-fluid" alt="">
           </div>
         </div>
@@ -270,7 +224,7 @@
     <div class="container px-4">
       <div class="row align-items-center">
 
-        <div class="col-md-6 col-sm-9 m-auto">
+        <div class="m-auto col-md-6 col-sm-9">
           <div class="border-0 footer-li ">
             <li><a href="#">Home-1</a></li>
             <li><a href="#">Home-2</a></li>
@@ -303,7 +257,7 @@
 
         </div>
       </div>
-      <div class="text-center text-white p-3">
+      <div class="p-3 text-center text-white">
         <p>©All Rights Reserved 2021 by DIU Code_Brigrade tech ltd.</p>
       </div>
 
