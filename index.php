@@ -18,7 +18,7 @@
   <header class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top  mb-5 bg-danger">
       <div class="container">
-        <a class="navbar-brand" href="#">TOP NEWS</a>
+        <a class="navbar-brand text-warning" href="#">TOP NEWS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +44,14 @@
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fas fa-user"></i>
-                <span class="ms-2 font-weight-bold">Nahidjc</span>
+                <span class="ms-1 font-weight-bold">Nahidjc</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="logout.php" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="ms-1 font-weight-bold">Logout</span>
               </a>
             </li>
 
