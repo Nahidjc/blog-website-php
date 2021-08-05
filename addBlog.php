@@ -19,7 +19,10 @@ if (isset($_POST['addblog'])) {
     $title = $_POST['title'];
     $description =  $_POST['description'];
     $author_username = $_SESSION['username'];
-    $date = date('d M, Y');
+    date_default_timezone_set("Asia/Dhaka");
+    $date = date("F j, Y, g:i a");
+    echo $date;
+
 
     //  find author id
     $check = "SELECT * FROM users where username = '$author_username'";
@@ -62,7 +65,7 @@ if (isset($_POST['addblog'])) {
     }
 
     if (count($errors) == 0) {
-        $sql = "INSERT INTO post ( title, description,	post_date, author,post_img) VALUES  ('$title','$description','$date',$author,'$file_name')";
+        $sql = "INSERT INTO post ( title, description,	post_date , author , post_img) VALUES  ('$title','$description','$date',$author,'$file_name');";
         $result = mysqli_query($mysqli, $sql);
         if ($result == true) {
             echo "result paichi";

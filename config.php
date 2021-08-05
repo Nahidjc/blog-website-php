@@ -8,7 +8,3 @@ $databasePassword = '';
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
 // $db = mysqli_connect('localhost','root','','registration');
-
-
-
-?>
