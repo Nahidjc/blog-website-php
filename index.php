@@ -72,126 +72,43 @@
 
     <section class="container">
       <h1 class="my-5 d-flex justify-content-center text-info">Latest News</h1>
+
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/tramp.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
+        <?php
+        include("config.php");
 
-              <h5 class="card-text">donal tramp want to be footballar </h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
+        $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC";
+        $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+        if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+
+        ?>
+
+            <div class="col">
+              <div class="card author h-100">
+                <img src="images/tramp.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                  <h5 class="card-text"> <?php echo $row['title']; ?></h5>
                 </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
+                <div class="card-footer">
+                  <div class=" d-flex align-items-center justify-content-between text-primary">
+                    <div>
+                      <i class="fas fa-user"></i>
+                      <span class="ms-1 font-weight-bold">tramp</span>
+                    </div>
+                    <a href=""><small class="text-muted">read more</small></a>
+                    <small><i class="fas fa-calendar me-1"></i> 20/2/21</small>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/mithun.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-
-              <h5 class="card-text">loard mithun selectet for coach of bangladesh cricket team</h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
-                </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/mahfuz.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-
-              <h5 class="card-text">sir mahfuz select as a singer of hollywood indesrty</h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
-                </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="mt-3 row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/covid.jfif" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-text">Bangladesh covid seatuations</h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
-                </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/goat.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-
-              <h5 class="card-text">black bangol goat</h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
-                </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card author h-100">
-            <img src="images/aus vs van.jfif" class="card-img-top" alt="...">
-            <div class="card-body">
-
-              <h5 class="card-text">bangladesh won By 23 runs</h5>
-            </div>
-            <div class="card-footer">
-              <div class=" d-flex align-items-center justify-content-between">
-                <div>
-                  <i class="fas fa-user"></i>
-                  <span class="ms-2 font-weight-bold">tramp</span>
-                </div>
-                <a href=""><small class="text-muted">read more</small></a>
-                <small>20/2/21</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <?php
+          }
+        } else {
+          echo "<h1>No Record Found</h1>";
+        }
+        ?>
       </div>
     </section>
 
