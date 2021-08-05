@@ -58,7 +58,20 @@ if (isset($_POST['register'])) {
   <link rel="stylesheet" href="css/style.css" />
   <title>register user</title>
 
-
+  <style>
+    .loginBtn {
+      color: #09f;
+      background-color: white;
+      border: 1px solid #e2e2e2;
+      line-height: 1.38;
+      font-weight: bold;
+      border-radius: 5px;
+      width: auto;
+      height: auto;
+      padding: 7px 20px;
+      margin: 5px 0 0 5px;
+    }
+  </style>
 </head>
 
 <body>
@@ -95,7 +108,7 @@ if (isset($_POST['register'])) {
               <input type="password" name="password_2" placeholder="Password confirmation" />
             </div>
             <div class="input-group">
-              <button type="submit" class="btn btn-primary" name="register">
+              <button type="submit" class="loginBtn" name="register">
                 Register
               </button>
             </div>

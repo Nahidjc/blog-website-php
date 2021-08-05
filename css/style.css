@@ -102,13 +102,25 @@ textarea {
 
 } */
 
-.btn {
+/* .btn {
     background: linear-gradient(45deg, salmon, tomato);
     padding: 10px 15px;
     border-radius: 10px;
     color: white;
     border: 1px solid lightcyan;
     cursor: pointer;
+} */
+.loginBtn {
+    color: #09f;
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    line-height: 1.38;
+    font-weight: bold;
+    border-radius: 2px;
+    width: auto;
+    height: 32px;
+    padding: 5px 20px;
+    margin: 0.8rem 0 0 0.8rem;
 }
 
 .error {

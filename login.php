@@ -49,7 +49,18 @@ if (isset($_POST['login'])) {
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
-
+		.loginBtn {
+			color: #09f;
+			background-color: white;
+			border: 1px solid #e2e2e2;
+			line-height: 1.38;
+			font-weight: bold;
+			border-radius: 5px;
+			width: auto;
+			height: auto;
+			padding: 7px 20px;
+			margin: 5px 0 0 5px;
+		}
 	</style>
 	<title>Login user</title>
 </head>
@@ -81,7 +92,7 @@ if (isset($_POST['login'])) {
 
 						<div class="input-group">
 
-							<button type="submit" class="btn" name="login">Login</button>
+							<button type="submit" class="loginBtn" name="login">Login</button>
 
 						</div>
 
