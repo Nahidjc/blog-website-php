@@ -98,7 +98,8 @@
                       <span class="ms-1 font-weight-bold"> <?php echo $row['username']; ?></span>
                     </div>
                     <a href=""><small class="text-muted">read more</small></a>
-                    <small><i class="fas fa-calendar me-1"></i> <?php echo $row['post_date']; ?></small>
+
+                    <small> <img src="images/calendar.svg" height="20" width="20"></i> <?php echo $row['post_date']; ?></small>
                   </div>
                 </div>
               </div>
