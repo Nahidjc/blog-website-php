@@ -86,7 +86,7 @@
 
             <div class="col">
               <div class="card author h-100">
-                <img src="images/tramp.jpg" class="card-img-top" alt="...">
+                <img src="upload/<?php echo $row['post_img']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
 
                   <h5 class="card-text"> <?php echo $row['title']; ?></h5>
@@ -95,10 +95,10 @@
                   <div class=" d-flex align-items-center justify-content-between text-primary">
                     <div>
                       <i class="fas fa-user"></i>
-                      <span class="ms-1 font-weight-bold">tramp</span>
+                      <span class="ms-1 font-weight-bold"> <?php echo $row['username']; ?></span>
                     </div>
                     <a href=""><small class="text-muted">read more</small></a>
-                    <small><i class="fas fa-calendar me-1"></i> 20/2/21</small>
+                    <small><i class="fas fa-calendar me-1"></i> <?php echo $row['post_date']; ?></small>
                   </div>
                 </div>
               </div>
