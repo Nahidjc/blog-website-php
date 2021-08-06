@@ -66,7 +66,7 @@
       </h1>
 
       <div class="container my-5">
-        <div class="my-3 gy-2 row">
+        <div class="gy-1 row">
           <?php
           include("config.php");
           mysqli_query($mysqli,'SET CHARACTER SET utf8');
@@ -78,7 +78,9 @@
             while ($row = mysqli_fetch_assoc($result)) {
 
           ?>
-              <div class="border-end col-md-4 col-lg-3 col-sm-6 ">
+          <div class="col-md-4 col-lg-3 col-sm-6 ">
+
+          <div class="border bg-light p-2">
                 <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
 
 
@@ -96,28 +98,11 @@
 
                 </div>
               </div>
+          </div>
 
 
-              <!-- <div class="col">
-                <div class="card author h-100">
-                  <img src="upload/<?php echo $row['post_img']; ?>" class="card-img-top" alt="...">
-                  <div class="card-body">
 
-                    <h5 class="card-text"> <?php echo $row['title']; ?></h5>
-                  </div>
-                  <div class="card-footer">
-                    <div class=" d-flex align-items-center justify-content-between text-primary">
-                      <div>
-                        <i class="fas fa-user"></i>
-                        <span class="ms-1 font-weight-bold"> <?php echo $row['username']; ?></span>
-                      </div>
-                      <a href=""><small class="text-muted">read more</small></a>
-
-                      <small> <img src="images/calendar.svg" height="20" width="20"></i> <?php echo $row['post_date']; ?></small>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+ 
           <?php
             }
           } else {
