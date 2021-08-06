@@ -71,7 +71,11 @@ session_start();
                                         <span class="ms-1 font-weight-bold"> <?php echo $_SESSION['username']; ?></span>
                                     </a>
                                 </li>
-
+                                <li class="m-auto nav-item">
+                                    <a href="myblogs.php">
+                                        <span class="ms-1 font-weight-bold text-dark">My Blogs</span>
+                                    </a>
+                                </li>
                                 <li class="m-auto nav-item">
                                     <a href="logout.php" class="loginBtn">
                                         <i class="fas fa-sign-out-alt"></i>
