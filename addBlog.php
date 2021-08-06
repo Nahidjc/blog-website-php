@@ -114,7 +114,9 @@ if (isset($_POST['addblog'])) {
 </head>
 
 <body>
-
+    <?php
+    include("navbar.php");
+    ?>
     <section class="container">
 
         <div class="row vh-100">

@@ -75,7 +75,9 @@ if (isset($_POST['register'])) {
 </head>
 
 <body>
-
+  <?php
+  include("navbar.php");
+  ?>
   <section class="container">
     <div class="row vh-100">
       <div class="m-auto col-md-7 col-lg-5 col-sm-8">

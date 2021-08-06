@@ -10,6 +10,18 @@
   <script src="https://kit.fontawesome.com/735bf95db2.js" crossorigin="anonymous"></script>
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .first-collection-name:before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      background: #0099FF;
+      display: inline-block;
+      border-radius: 50%;
+      margin: auto 4px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -71,7 +83,9 @@
   <main>
 
     <section class="container">
-      <h1 class="my-5 d-flex justify-content-center text-info">Latest News</h1>
+      <h1 class="my-5 d-flex justify-content-start text-info first-collection-name">
+        সর্বশেষ সংবাদ
+      </h1>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php
