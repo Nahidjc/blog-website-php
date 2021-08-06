@@ -20,6 +20,10 @@
       border-radius: 50%;
       margin: auto 4px;
     }
+
+    a {
+      text-decoration: none;
+    }
   </style>
 
 </head>
@@ -28,54 +32,21 @@
   <!-- navbar inheritance -->
   <?php include("navbar.php"); ?>
   <!-- if user not logged in they can not access this page -->
-  <header class="container">
+  <header class="container my-5">
     <!-- slider -->
-    <section class="my-5 mt-5 shadow-lg" id="home">
-
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="p-5 row d-flex align-items-center">
-              <div class="col-lg-7">
-
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, id!</h5>
-
-
-                <button class="btn bg-primary">Read More</button>
-              </div>
-              <div class="col-lg-5"><img src="images/tramp.jpg" class="d-block w-100" height="350px" width="600px" alt="..."></div>
-            </div>
-
-          </div>
-          <div class="carousel-item">
-            <div class="p-5 row d-flex align-items-center">
-              <div class="col-lg-7">
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, temporibus?</h5>
-
-
-                <button class="btn bg-danger">Read More</button>
-              </div>
-              <div class="col-lg-5 "> <img src="images/mithun.jpg" class="d-block w-100" height="350px" width="600px" alt="...">
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="p-5 row d-flex align-items-center">
-              <div class="col-lg-7">
-
-                <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, eius!</h5>
-
-                <button class="btn bg-info">Read More</button>
-              </div>
-              <div class="col-lg-5"> <img src="images/mahfuz.jpg" class="d-block w-100" height="350px" width="600px" alt="..."></div>
-            </div>
-
+    <div class="row">
+      <div class="m-auto col-md-8">
+        <div class="text-white border-0 card">
+          <img src="upload/325340.4.jpg" class="card-img" height="450px" alt="...">
+          <div class="mb-auto card-img-overlay" style="margin-top: 250px;">
+            <h3 class="card-title d-flex justify-content-center align-items-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam,</h3>
+            <p class="card-text d-flex justify-content-center align-items-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, explicabo?
+            </p>
+            <p class="card-text d-flex justify-content-center align-items-center">3 mins ago</p>
           </div>
         </div>
       </div>
-
-    </section>
+    </div>
 
   </header>
 
@@ -87,44 +58,61 @@
         সর্বশেষ সংবাদ
       </h1>
 
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php
-        include("config.php");
+      <div class="container my-5">
+        <div class="row">
+          <?php
+          include("config.php");
 
-        $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC";
-        $result = mysqli_query($mysqli, $sql) or die("Query Failed");
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
+          $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC";
+          $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
 
-        ?>
+          ?>
+              <div class="col-md-4 col-lg-3 col-sm-6 border-end"><img src="upload/<?php echo $row['post_img']; ?>" class="img-fluid" alt="">
+                <a href="single.php?id=<?php echo $row['post_id']; ?>">
 
-            <div class="col">
-              <div class="card author h-100">
-                <img src="upload/<?php echo $row['post_img']; ?>" class="card-img-top" alt="...">
-                <div class="card-body">
+                  <h5><?php echo $row['title']; ?></h5>
+                  <p><?php echo substr($row['description'], 0, 70) . "..."; ?></p>
+                </a>
 
-                  <h5 class="card-text"> <?php echo $row['title']; ?></h5>
-                </div>
-                <div class="card-footer">
-                  <div class=" d-flex align-items-center justify-content-between text-primary">
-                    <div>
-                      <i class="fas fa-user"></i>
-                      <span class="ms-1 font-weight-bold"> <?php echo $row['username']; ?></span>
-                    </div>
-                    <a href=""><small class="text-muted">read more</small></a>
 
-                    <small> <img src="images/calendar.svg" height="20" width="20"></i> <?php echo $row['post_date']; ?></small>
-                  </div>
+                <div class="publish-info d-flex align-items-center">
+
+                  <small><i class="fas fa-user me-1"></i><?php echo $row['username']; ?></small>
+                  <small class="ms-auto"><img src="images/calendar.svg" height="20" width="20"></i><?php echo $row['post_date']; ?></small>
+
                 </div>
               </div>
-            </div>
-        <?php
+
+
+              <!-- <div class="col">
+                <div class="card author h-100">
+                  <img src="upload/<?php echo $row['post_img']; ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+
+                    <h5 class="card-text"> <?php echo $row['title']; ?></h5>
+                  </div>
+                  <div class="card-footer">
+                    <div class=" d-flex align-items-center justify-content-between text-primary">
+                      <div>
+                        <i class="fas fa-user"></i>
+                        <span class="ms-1 font-weight-bold"> <?php echo $row['username']; ?></span>
+                      </div>
+                      <a href=""><small class="text-muted">read more</small></a>
+
+                      <small> <img src="images/calendar.svg" height="20" width="20"></i> <?php echo $row['post_date']; ?></small>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+          <?php
+            }
+          } else {
+            echo "<h1>No Record Found</h1>";
           }
-        } else {
-          echo "<h1>No Record Found</h1>";
-        }
-        ?>
-      </div>
+          ?>
+        </div>
     </section>
 
     <section class="mb-5">
