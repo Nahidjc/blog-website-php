@@ -59,7 +59,7 @@
       </h1>
 
       <div class="container my-5">
-        <div class="row">
+        <div class="my-3 gy-2 row">
           <?php
           include("config.php");
 
@@ -69,15 +69,18 @@
             while ($row = mysqli_fetch_assoc($result)) {
 
           ?>
-              <div class="col-md-4 col-lg-3 col-sm-6 border-end"><img src="upload/<?php echo $row['post_img']; ?>" class="img-fluid" alt="">
+              <div class="border-end col-md-4 col-lg-3 col-sm-6 ">
+                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
+
+
                 <a href="single.php?id=<?php echo $row['post_id']; ?>">
 
-                  <h5><?php echo $row['title']; ?></h5>
-                  <p><?php echo substr($row['description'], 0, 70) . "..."; ?></p>
+                  <h5 style="color:black;font-weight:bolder"><?php echo substr($row['title'], 0, 130) . "..."; ?></h5>
+                  <p class="text-gray" style="font-size:14px;color:black;"><?php echo substr($row['description'], 0, 250) . "..."; ?></p>
                 </a>
 
 
-                <div class="publish-info d-flex align-items-center">
+                <div class="pb-2 publish-info d-flex align-items-center">
 
                   <small><i class="fas fa-user me-1"></i><?php echo $row['username']; ?></small>
                   <small class="ms-auto"><img src="images/calendar.svg" height="20" width="20"></i><?php echo $row['post_date']; ?></small>

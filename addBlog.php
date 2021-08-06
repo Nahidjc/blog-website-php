@@ -1,8 +1,6 @@
 <?php
 include_once("function.php");
-
 check_login_user();
-
 ?>
 
 <!DOCTYPE html>
