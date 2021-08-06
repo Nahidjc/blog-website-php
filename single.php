@@ -14,6 +14,16 @@
     button {
       float: right;
     }
+
+    @import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+
+    body {
+      font-family: 'AdorshoLipi', Arial, sans-serif !important;
+    }
+
+    a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -31,6 +41,8 @@
         <?php
         include("config.php");
         $post_id = $_GET['id'];
+        mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+        mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
         $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id WHERE post.post_id = {$post_id}";
         $result = mysqli_query($mysqli, $sql) or die("Query Failed");
         if (mysqli_num_rows($result) > 0) {

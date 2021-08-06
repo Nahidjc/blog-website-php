@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/735bf95db2.js" crossorigin="anonymous"></script>
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -19,6 +20,12 @@
       display: inline-block;
       border-radius: 50%;
       margin: auto 4px;
+    }
+
+    @import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+
+    body {
+      font-family: 'AdorshoLipi', Arial, sans-serif !important;
     }
 
     a {
@@ -62,6 +69,8 @@
         <div class="my-3 gy-2 row">
           <?php
           include("config.php");
+          mysqli_query($mysqli,'SET CHARACTER SET utf8');
+           mysqli_query($mysqli,"SET SESSION collation_connection ='utf8_general_ci'");
 
           $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC";
           $result = mysqli_query($mysqli, $sql) or die("Query Failed");
