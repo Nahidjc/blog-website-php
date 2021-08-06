@@ -70,14 +70,7 @@ if (isset($_POST['addblog'])) {
         } else {
             echo "result Painai";
         }
-        // if (mysqli_num_rows($result) == 1) {
-        //     //login user
-        //     $_SESSION['username'] = $username;
-        //     $_SESSION['password'] = $password;
-        //     header("Location: index.php");
-        // } else {
-        //     array_push($errors, "wrong username or password");
-        // }
+
     }
 }
 

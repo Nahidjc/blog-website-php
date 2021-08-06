@@ -51,6 +51,8 @@
         সর্বশেষ সংবাদ
       </h1> -->
             <?php
+            include_once("function.php");
+            check_login_user();
             $author_username = $_SESSION['username'];
             $check = "SELECT * FROM users where username = '$author_username'";
             $findAuthor = mysqli_query($mysqli, $check) or die("Failed to query");
@@ -93,7 +95,7 @@
 
 
 
-                                    <a href="#"> <button class="btn btn-success btn-sm">Edit Blog</button> </a>
+                                    <a href="editblog.php?id=<?php echo $row['post_id']; ?>"> <button class="btn btn-success btn-sm">Edit Blog</button> </a>
                                     <a href="deleteblog.php?id=<?php echo $row['post_id']; ?>"> <button class="btn btn-danger btn-sm">Delete Blog</button> </a>
 
                                 </div>
