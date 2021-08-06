@@ -57,7 +57,11 @@ if (isset($_POST['update'])) {
     }
 
     if (count($errors) == 0) {
-        $sql = "INSERT INTO post ( title, description,	post_date , author , post_img) VALUES  ('$title','$description','$date',$author,'$file_name');";
+
+        mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+        mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
+
+        $sql = "UPDATE  post SET  title='$title', description='$description',post_date= '$date',author='$author', post_img='$file_name' WHERE post_id=$id;";
         $result = mysqli_query($mysqli, $sql);
         if ($result == true) {
             echo "result paichi";
@@ -68,8 +72,8 @@ if (isset($_POST['update'])) {
 }
 ?>
 <?php
- mysqli_query($mysqli, 'SET CHARACTER SET utf8');
- mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
+mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
 $id = $_GET['id'];
 $result = mysqli_query($mysqli, "SELECT * FROM post WHERE post_id=$id");
 while ($res = mysqli_fetch_array($result)) {
@@ -130,13 +134,13 @@ while ($res = mysqli_fetch_array($result)) {
                         </div>
                         <div class="input-group">
                             <label>Blog Description</label>
-                            <textarea type="text" name="description" placeholder="Blog Content" >
+                            <textarea type="text" name="description" placeholder="Blog Content">
                             <?php echo htmlspecialchars($description); ?>
                             </textarea>
 
 
                         </div>
-                       
+
 
 
                         <div class="input-group">
