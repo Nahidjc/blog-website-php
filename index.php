@@ -70,8 +70,8 @@
         <div class="text-white border-0 card">
           <img src="upload/<?php echo $row['post_img']; ?>" class="card-img" height="450px" alt="...">
           <div class="mb-auto card-img-overlay" style="margin-top: 250px;">
-            <h3 class="card-title d-flex justify-content-center align-items-center"><?php echo substr($row['title'], 0, 130) . "..."; ?></h3>
-            <p class="card-text d-flex justify-content-center align-items-center"><?php echo substr($row['description'], 0, 230) . "..."; ?>
+            <h3 class="card-title d-flex justify-content-center align-items-center"><?php echo $row['title'] ?></h3>
+            <p class="card-text d-flex justify-content-center align-items-center"><?php echo substr($row['description'], 0, 1000) ; ?>
             </p>
             <p class="card-text d-flex justify-content-center align-items-center">3 mins ago</p>
           </div>
