@@ -1,6 +1,9 @@
 <?php
 include("config.php");
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 ?>
 
 <!DOCTYPE html>
@@ -13,18 +16,18 @@ session_start();
     <script src="https://kit.fontawesome.com/735bf95db2.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-        .loginBtn {
-            color: #09f;
-            background-color: white;
-            border: 1px solid #e2e2e2;
-            line-height: 1.38;
-            font-weight: bold;
-            border-radius: 5px;
-            width: auto;
-            height: auto;
-            padding: 7px 20px;
-            margin: 5px 0 0 5px;
-        }
+    .loginBtn {
+        color: #09f;
+        background-color: white;
+        border: 1px solid #e2e2e2;
+        line-height: 1.38;
+        font-weight: bold;
+        border-radius: 5px;
+        width: auto;
+        height: auto;
+        padding: 7px 20px;
+        margin: 5px 0 0 5px;
+    }
     </style>
 </head>
 
@@ -33,7 +36,9 @@ session_start();
         <nav class="mb-5 navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand text-warning" href="index.php">দৈনিক পত্রিকা</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,33 +65,33 @@ session_start();
 
                         <?php if (!empty($_SESSION['username'])) : ?>
 
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item">
-                                    <a href="addBlog.php" class="nav-link">Create Blog</a>
-                                </li>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="addBlog.php" class="nav-link">Create Blog</a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="fas fa-user"></i>
-                                        <span class="ms-1 font-weight-bold"> <?php echo $_SESSION['username']; ?></span>
-                                    </a>
-                                </li>
-                                <li class="m-auto nav-item">
-                                    <a href="myblogs.php">
-                                        <span class="ms-1 font-weight-bold text-dark">My Blogs</span>
-                                    </a>
-                                </li>
-                                <li class="m-auto nav-item">
-                                    <a href="logout.php" class="loginBtn">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <span class="ms-1 font-weight-bold">Logout</span>
-                                    </a>
-                                </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-user"></i>
+                                    <span class="ms-1 font-weight-bold"> <?php echo $_SESSION['username']; ?></span>
+                                </a>
+                            </li>
+                            <li class="m-auto nav-item">
+                                <a href="myblogs.php">
+                                    <span class="ms-1 font-weight-bold text-dark">My Blogs</span>
+                                </a>
+                            </li>
+                            <li class="m-auto nav-item">
+                                <a href="logout.php" class="loginBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span class="ms-1 font-weight-bold">Logout</span>
+                                </a>
+                            </li>
 
 
-                            </ul>
+                        </ul>
                         <?php else : ?>
-                            <a href="login.php"> <button class="loginBtn">Login</button></a>
+                        <a href="login.php"> <button class="loginBtn">Login</button></a>
 
                         <?php endif ?>
 

@@ -17,6 +17,7 @@ if (isset($_POST['addblog'])) {
     $title = $_POST['title'];
     $description =  $_POST['description'];
     $author_username = $_SESSION['username'];
+    $category_id =  $_POST['category'];
     date_default_timezone_set("Asia/Dhaka");
     $date = date("F j, Y, g:i a");
     echo $date;
@@ -37,6 +38,9 @@ if (isset($_POST['addblog'])) {
 
     if (empty($description)) {
         array_push($errors, "description is required");
+    }
+    if (empty($category_id)) {
+        array_push($errors, "Category is required");
     }
     if (isset($_FILES['fileToUpload'])) {
         $file_name = $_FILES['fileToUpload']['name'];
@@ -65,7 +69,7 @@ if (isset($_POST['addblog'])) {
     if (count($errors) == 0) {
         mysqli_query($mysqli, 'SET CHARACTER SET utf8');
         mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
-        $sql = "INSERT INTO post ( title, description,	post_date , author , post_img) VALUES  ('$title','$description','$date',$author,'$file_name');";
+        $sql = "INSERT INTO post ( title, description,	post_date , author ,category_id, post_img) VALUES  ('$title','$description','$date',$author,$category_id,'$file_name');";
         $result = mysqli_query($mysqli, $sql);
         if ($result == true) {
             echo "result paichi";
@@ -87,18 +91,18 @@ if (isset($_POST['addblog'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .loginBtn {
-            color: #09f;
-            background-color: white;
-            border: 1px solid #e2e2e2;
-            line-height: 1.38;
-            font-weight: bold;
-            border-radius: 5px;
-            width: auto;
-            height: auto;
-            padding: 7px 20px;
-            margin: 5px 0 0 5px;
-        }
+    .loginBtn {
+        color: #09f;
+        background-color: white;
+        border: 1px solid #e2e2e2;
+        line-height: 1.38;
+        font-weight: bold;
+        border-radius: 5px;
+        width: auto;
+        height: auto;
+        padding: 7px 20px;
+        margin: 5px 0 0 5px;
+    }
     </style>
     <title>Upload Blog</title>
     <style>
@@ -128,9 +132,36 @@ if (isset($_POST['addblog'])) {
                             <input type="text" name="title" placeholder="Blog Title" value="<?php echo $title; ?>">
                         </div>
                         <div class="input-group"><label>Blog Description</label>
-                            <textarea type="textarea" name="description" placeholder="Blog Content" value="<?php echo $description; ?>"></textarea>
+                            <textarea type="textarea" name="description" placeholder="Blog Content"
+                                value="<?php echo $description; ?>"></textarea>
 
 
+                        </div>
+
+                        <div class="input-group">
+                            <label for="blog-category">Blog Category:</label>
+
+                
+
+                            <select name="category" id="blog-category" class="form-control">
+                            <option disabled selected> Select Category</option>
+
+                                <?php
+                                 include("config.php");
+                                 mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+                                 mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
+                                $sql = "SELECT * FROM category";
+                                $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+                                if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<option value='{$row['id'] }'>{$row['category_name'] } </option>";
+                                }
+                            }
+                        ?>
+
+
+
+                            </select>
                         </div>
 
 
@@ -156,7 +187,9 @@ if (isset($_POST['addblog'])) {
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
 </body>
 
