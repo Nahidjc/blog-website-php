@@ -39,6 +39,10 @@
       position:absolute;
       bottom:0;
     }
+    .news-img{
+      height:200px;
+      width:100%;
+    }
   </style>
 
 </head>
@@ -110,7 +114,7 @@
           <div class="col-md-4 col-lg-3 col-sm-6 ">
 
           <div class="border bg-light p-2 parent-news">
-                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
+                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" alt="">
 
 
                 <a href="single.php?id=<?php echo $row['post_id']; ?>">

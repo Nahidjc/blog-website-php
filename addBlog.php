@@ -63,6 +63,8 @@ if (isset($_POST['addblog'])) {
     }
 
     if (count($errors) == 0) {
+        mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+        mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
         $sql = "INSERT INTO post ( title, description,	post_date , author , post_img) VALUES  ('$title','$description','$date',$author,'$file_name');";
         $result = mysqli_query($mysqli, $sql);
         if ($result == true) {
