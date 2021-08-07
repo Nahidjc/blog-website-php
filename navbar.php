@@ -43,7 +43,23 @@ if(!isset($_SESSION))
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
+
+                        <?php
+                                 include("config.php");
+                                 mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+                                 mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
+                                $sql = "SELECT * FROM category";
+                                $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+                                if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) { ?>
                         <li class="nav-item">
+                            <a class="nav-link active" href="category.php?id=<?php echo $row['id']; ?>"> <?php echo "{$row['category_name'] }" ?> </a>
+                        </li>
+                        <?php
+                                }
+                            }
+                        ?>
+                        <!-- <li class="nav-item">
                             <a class="nav-link active" href="#home">সর্বশেষ </a>
                         </li>
                         <li class="nav-item">
@@ -58,7 +74,7 @@ if(!isset($_SESSION))
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#">বিশ্ব</a>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
