@@ -39,15 +39,27 @@
   <!-- navbar inheritance -->
   <?php include("navbar.php"); ?>
   <!-- if user not logged in they can not access this page -->
-  <header class="container my-5">
+  <?php
+          include("config.php");
+          mysqli_query($mysqli,'SET CHARACTER SET utf8');
+           mysqli_query($mysqli,"SET SESSION collation_connection ='utf8_general_ci'");
+
+          $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC LIMIT 1 ";
+          $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+
+          ?>
+
+<header class="container my-5">
     <!-- slider -->
     <div class="row">
       <div class="m-auto col-md-8">
         <div class="text-white border-0 card">
-          <img src="upload/325340.4.jpg" class="card-img" height="450px" alt="...">
+          <img src="upload/<?php echo $row['post_img']; ?>" class="card-img" height="450px" alt="...">
           <div class="mb-auto card-img-overlay" style="margin-top: 250px;">
-            <h3 class="card-title d-flex justify-content-center align-items-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam,</h3>
-            <p class="card-text d-flex justify-content-center align-items-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, explicabo?
+            <h3 class="card-title d-flex justify-content-center align-items-center"><?php echo substr($row['title'], 0, 130) . "..."; ?></h3>
+            <p class="card-text d-flex justify-content-center align-items-center"><?php echo substr($row['description'], 0, 230) . "..."; ?>
             </p>
             <p class="card-text d-flex justify-content-center align-items-center">3 mins ago</p>
           </div>
@@ -56,6 +68,15 @@
     </div>
 
   </header>
+
+
+<?php
+            }
+          } else {
+            echo "<h1>No Record Found</h1>";
+          }
+          ?>
+
 
   <!-- main section -->
   <main>
