@@ -29,11 +29,22 @@
 
         <div class="m-auto col-md-6 col-sm-9">
           <div class="border-0 footer-li ">
-            <li><a href="#">Home-1</a></li>
-            <li><a href="#">Home-2</a></li>
-            <li><a href="#">Home-3</a></li>
-            <li><a href="#">Home-4</a></li>
-            <li><a href="#">Home-5</a></li>
+          
+          <?php
+                include("config.php");
+                mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+                mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
+                $sql = "SELECT * FROM category";
+                $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+                if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) { ?>
+                <li class="p-2 m-1 "><a href="blogcategory.php?id=<?php echo $row['id']; ?>"><?php echo "{$row['category_name'] }" ?></a></li>
+                <?php
+                    }
+                }
+            ?>
+          
+        
           </div>
         </div>
 
