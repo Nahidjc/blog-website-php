@@ -31,6 +31,14 @@
     a {
       text-decoration: none;
     }
+    .parent-news{
+      height:400px;
+      position:relative;
+    }
+    .news-header{
+      position:absolute;
+      bottom:0;
+    }
   </style>
 
 </head>
@@ -87,7 +95,7 @@
       </h1>
 
       <div class="container my-5">
-        <div class="gy-1 row">
+        <div class="g-2 row">
           <?php
           include("config.php");
           mysqli_query($mysqli,'SET CHARACTER SET utf8');
@@ -101,7 +109,7 @@
           ?>
           <div class="col-md-4 col-lg-3 col-sm-6 ">
 
-          <div class="border bg-light p-2">
+          <div class="border bg-light p-2 parent-news">
                 <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
 
 
@@ -112,9 +120,10 @@
                 </a>
 
 
-                <div class="pb-2 publish-info d-flex align-items-center">
+                <div class="pb-2 news-header">
 
-                  <small><i class="fas fa-user me-1"></i><?php echo $row['username']; ?></small>
+                  <small class="me-2"><i class="fas fa-user me-1">
+                  </i><?php echo $row['username']; ?></small>
                   <small class="ms-auto"><img src="images/calendar.svg" height="20" width="20"></i><?php echo $row['post_date']; ?></small>
 
                 </div>
