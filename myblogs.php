@@ -78,7 +78,7 @@
                                 <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
 
 
-                                <a href="single.php?id=<?php echo $row['post_id']; ?>">
+                                <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">
 
                                     <h5 style="color:black;font-weight:bolder"><?php echo substr($row['title'], 0, 130) . "..."; ?></h5>
                                     <p class="text-gray" style="font-size:14px;color:black;"><?php echo substr($row['description'], 0, 250) . "..."; ?></p>

@@ -117,7 +117,7 @@
                 <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" alt="">
 
 
-                <a href="single.php?id=<?php echo $row['post_id']; ?>">
+                <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">
 
                   <h5 style="color:black;font-weight:bolder"><?php echo substr($row['title'], 0, 130) . "..."; ?></h5>
                   <p class="text-gray" style="font-size:14px;color:black;"><?php echo substr($row['description'], 0, 250) . "..."; ?></p>
@@ -171,49 +171,7 @@
 
   </main>
 
-  <footer class="bg-dark">
-    <div class="container px-4">
-      <div class="row align-items-center">
-
-        <div class="m-auto col-md-6 col-sm-9">
-          <div class="border-0 footer-li ">
-            <li><a href="#">Home-1</a></li>
-            <li><a href="#">Home-2</a></li>
-            <li><a href="#">Home-3</a></li>
-            <li><a href="#">Home-4</a></li>
-            <li><a href="#">Home-5</a></li>
-          </div>
-        </div>
-
-
-        <div class="col-md-6 col-sm-9">
-          <div class="p-3 border-0">
-            <h1>subscribe for latest news</h1>
-            <form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label text-light">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label text-light" for="exampleCheck1">Check me out</label>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-      <div class="p-3 text-center text-white">
-        <p>©All Rights Reserved 2021 by DIU Code_Brigrade tech ltd.</p>
-      </div>
-
-    </div>
-  </footer>
+  <?php include("footer.php") ?>
 
 
   <!-- bootstrap ja -->
