@@ -74,8 +74,8 @@
                         while ($row = mysqli_fetch_assoc($result)) {
 
                     ?>
-                            <div class="border-end col-md-4 col-lg-3 col-sm-6 ">
-                                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" alt="">
+                            <div class="border-end col-md-6 col-lg-4 col-xl-3 col-sm-6  col-8 m-auto mb-2">
+                                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid" style="height:200px;" alt="">
 
 
                                 <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">

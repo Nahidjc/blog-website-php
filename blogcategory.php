@@ -110,10 +110,10 @@
             while ($row = mysqli_fetch_assoc($result)) {
 
           ?>
-          <div class="col-md-4 col-lg-3 col-sm-6 ">
+          <div class="col-md-6 col-lg-4 col-xl-3 col-sm-6  col-8 m-auto mb-2">
 
           <div class="border bg-light p-2 parent-news">
-                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" alt="">
+                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" style="height:200px;" alt="">
 
 
                 <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">
