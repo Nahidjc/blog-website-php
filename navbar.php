@@ -53,7 +53,7 @@ if(!isset($_SESSION))
                                 if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) { ?>
                         <li class="nav-item">
-                            <a class="nav-link active" href="category.php?id=<?php echo $row['id']; ?>"> <?php echo "{$row['category_name'] }" ?> </a>
+                            <a class="nav-link active" href="blogcategory.php?id=<?php echo $row['id']; ?>"> <?php echo "{$row['category_name'] }" ?> </a>
                         </li>
                         <?php
                                 }
