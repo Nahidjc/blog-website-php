@@ -73,16 +73,17 @@
         }
         ?>
       </div>
-    </div>
-    <section class="coment">
-      <div class="container px-4">
-        <div class="row gx-5">
-          <div class="col">
-            <div class="p-3 border bg-light">COMMENT</div>
-          </div>
-          <div class="col">
-            <div class="p-3 border bg-light">
-              <div class="icon d-flex justify-content-center align-items-center">
+      <hr>
+
+
+      
+
+      <div class="container ">
+        <div class="row m-auto">
+          <div class="col-md-10 m-auto d-flex justify-content-between border bg-light">
+            <div class="p-4">COMMENT</div>
+            <div class="p-4">
+              <div class="icon  d-flex justify-content-center align-items-center">
                 <i class="fab fa-facebook-f"></i>
                 <i class="mx-3 fab fa-twitter"></i>
                 <i class="fas fa-bookmark"></i>
@@ -92,44 +93,10 @@
           </div>
         </div>
       </div>
-      <hr>
-      <div class="container px-4">
-        <div class="row gx-5">
-          <div class="col">
-            <div class="p-3 border-0 bg-light">comments 2</div>
-          </div>
-          <div class="col">
-            <div class="p-3 border-0 bg-light">
-              <h3>sing in</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="px-4 container-0">
-        <div class="row gx-5">
-          <div class="col">
-            <div class="p-3 border-0 bg-light">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>new comment</option>
-                <option value="1">Old comment</option>
 
-              </select>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3 border-0 bg-light">
-              <h3>
-                <i class="fas fa-share-alt ms-5">sheare</i>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div>
+    </div>
 
-      </div>
 
   </main>
 
