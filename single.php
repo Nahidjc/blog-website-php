@@ -33,7 +33,6 @@ if (isset($_POST['addComment'])) {
 
   if (empty($comment)) {
     echo "Please write comment";
-    exit;
     array_push($errors, "Please type any word");
   }
 
@@ -165,7 +164,7 @@ if (isset($_POST['addComment'])) {
             </div>
           </div>
         </div>
-
+<!-- Comment print dynamic -->
         <div class="my-5">
           <?php
           include("config.php");
