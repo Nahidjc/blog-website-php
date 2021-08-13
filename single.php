@@ -63,7 +63,8 @@ if (isset($_POST['addComment'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Single Blog</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/4a254fc562.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -203,6 +204,8 @@ if (isset($_POST['addComment'])) {
       <div class="row my-5">
         <div class="col-md-10 m-auto">
           <form method="post" action="">
+          <?php include('errors.php'); ?>
+          <br>
             <div class="form-group">
 
               <textarea type="textarea" class="form-control" placeholder="Enter Your comment" name="comment"></textarea>
