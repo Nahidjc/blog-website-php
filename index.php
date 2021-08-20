@@ -31,17 +31,20 @@
     a {
       text-decoration: none;
     }
-    .parent-news{
-      height:400px;
-      position:relative;
+
+    .parent-news {
+      height: 400px;
+      position: relative;
     }
-    .news-header{
-      position:absolute;
-      bottom:0;
+
+    .news-header {
+      position: absolute;
+      bottom: 0;
     }
-    .news-img{
-      height:200px;
-      width:100%;
+
+    .news-img {
+      height: 200px;
+      width: 100%;
     }
   </style>
 
@@ -52,42 +55,42 @@
   <?php include("navbar.php"); ?>
   <!-- if user not logged in they can not access this page -->
   <?php
-          include("config.php");
-          mysqli_query($mysqli,'SET CHARACTER SET utf8');
-           mysqli_query($mysqli,"SET SESSION collation_connection ='utf8_general_ci'");
+  include("config.php");
+  mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+  mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
 
-          $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC LIMIT 1 ";
-          $result = mysqli_query($mysqli, $sql) or die("Query Failed");
-          if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+  $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC LIMIT 1 ";
+  $result = mysqli_query($mysqli, $sql) or die("Query Failed");
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
 
-          ?>
+  ?>
 
-<header class="container my-5">
-    <!-- slider -->
-    <div class="row">
-      <div class="m-auto col-md-8">
-        <div class="text-white border-0 card">
-          <img src="upload/<?php echo $row['post_img']; ?>" class="card-img" height="450px" alt="...">
-          <div class="mb-auto card-img-overlay" style="margin-top: 250px;">
-            <h3 class="card-title d-flex justify-content-center align-items-center"><?php echo $row['title'] ?></h3>
-            <p class="card-text d-flex justify-content-center align-items-center"><?php echo substr($row['description'], 0, 1000) ; ?>
-            </p>
-            <p class="card-text d-flex justify-content-center align-items-center">3 mins ago</p>
+      <header class="container my-5">
+        <!-- slider -->
+        <div class="row">
+          <div class="m-auto col-md-8">
+            <div class="text-white border-0 card">
+              <img src="upload/<?php echo $row['post_img']; ?>" class="card-img" height="450px" alt="...">
+              <div class="mb-auto card-img-overlay" style="margin-top: 250px;">
+                <h3 class="card-title d-flex justify-content-center align-items-center"><?php echo $row['title'] ?></h3>
+                <p class="card-text d-flex justify-content-center align-items-center"><?php echo substr($row['description'], 0, 1000); ?>
+                </p>
+                <p class="card-text d-flex justify-content-center align-items-center">3 mins ago</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-  </header>
+      </header>
 
 
-<?php
-            }
-          } else {
-            echo "<h1>No Record Found</h1>";
-          }
-          ?>
+  <?php
+    }
+  } else {
+    echo "<h1>No Record Found</h1>";
+  }
+  ?>
 
 
   <!-- main section -->
@@ -102,8 +105,8 @@
         <div class="g-2 row">
           <?php
           include("config.php");
-          mysqli_query($mysqli,'SET CHARACTER SET utf8');
-           mysqli_query($mysqli,"SET SESSION collation_connection ='utf8_general_ci'");
+          mysqli_query($mysqli, 'SET CHARACTER SET utf8');
+          mysqli_query($mysqli, "SET SESSION collation_connection ='utf8_general_ci'");
 
           $sql = "SELECT post.post_id,post.title,post.description,post.post_date,post.post_img,users.username FROM post INNER JOIN users ON post.author = users.id ORDER BY post.post_id DESC";
           $result = mysqli_query($mysqli, $sql) or die("Query Failed");
@@ -111,32 +114,32 @@
             while ($row = mysqli_fetch_assoc($result)) {
 
           ?>
-          <div class="col-md-6 col-lg-4 col-xl-3 col-sm-6  col-8 m-auto mb-2">
+              <div class="col-md-6 col-lg-4 col-xl-3 col-sm-6  col-8 m-auto mb-2">
 
-          <div class="border bg-light p-2 parent-news">
-                <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" style="height:200px;" alt="">
-
-
-                <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">
-
-                  <h5 style="color:black;font-weight:bolder"><?php echo substr($row['title'], 0, 130) . "..."; ?></h5>
-                  <p class="text-gray" style="font-size:14px;color:black;"><?php echo substr($row['description'], 0, 250) . "..."; ?></p>
-                </a>
+                <div class="border bg-light p-2 parent-news">
+                  <img src="upload/<?php echo $row['post_img']; ?>" class="my-2 img-fluid news-img" style="height:200px;" alt="">
 
 
-                <div class="pb-2 news-header">
+                  <a style="text-decoration: none;" href="single.php?id=<?php echo $row['post_id']; ?>">
 
-                  <small class="me-2"><i class="fas fa-user me-1">
-                  </i><?php echo $row['username']; ?></small>
-                  <small class="ms-auto"><img src="images/calendar.svg" height="20" width="20"></i><?php echo $row['post_date']; ?></small>
+                    <h5 style="color:black;font-weight:bolder"><?php echo substr($row['title'], 0, 130) . "..."; ?></h5>
+                    <p class="text-gray" style="font-size:14px;color:black;"><?php echo substr($row['description'], 0, 250) . "..."; ?></p>
+                  </a>
 
+
+                  <div class="pb-2 news-header">
+
+                    <small class="me-2"><i class="fas fa-user me-1">
+                      </i><?php echo $row['username']; ?></small>
+                    <small class="ms-auto"><img src="images/calendar.svg" height="20" width="20"></i><?php echo $row['post_date']; ?></small>
+
+                  </div>
                 </div>
               </div>
-          </div>
 
 
 
- 
+
           <?php
             }
           } else {
